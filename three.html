@@ -1,0 +1,85 @@
+ejercicio 3:<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Cambiar Estilos con jQuery</title>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    /* Estilos adicionales */
+    .title {
+      cursor: pointer;
+      transition: all 0.5s ease;
+    }
+
+    /* Estilo de los títulos al hacer hover */
+    .title:hover {
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body class="bg-gray-200 p-6">
+
+  <!-- Título 1 -->
+  <h1 id="title1" class="title text-4xl font-extrabold text-center mb-6 py-6 px-8 bg-indigo-600 text-white rounded-xl shadow-lg">
+    tittle 1
+  </h1>
+  
+  <!-- Título 2 -->
+  <h1 id="title2" class="title text-4xl font-extrabold text-center mb-6 py-6 px-8 bg-teal-500 text-white rounded-xl shadow-lg">
+    tittle 2 xd
+  </h1>
+
+  <!-- jQuery Script -->
+  <script>
+    $(document).ready(function () {
+      // Definir los estilos originales y los nuevos
+      const originalStyles = {
+        backgroundColor: '#4c51bf', // Indigo 600
+        color: 'white',
+        fontFamily: 'sans-serif',
+        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+      };
+
+      const newStyles1 = {
+        backgroundColor: '#ff6347', // Tomate
+        color: '#f8f9fa', // Blanco claro
+        fontFamily: 'Georgia, serif',
+        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)',
+      };
+
+      const newStyles2 = {
+        backgroundColor: '#8a2be2', // Azul violeta
+        color: '#fff5ee', // Blanco floral
+        fontFamily: 'Courier New, monospace',
+        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)',
+      };
+
+      // Función para cambiar el estilo de un título
+      function toggleStyles(element, original, modified) {
+        const currentStyles = element.css(['background-color', 'color', 'font-family', 'box-shadow']);
+        
+        if (currentStyles['background-color'] === modified.backgroundColor) {
+          // Si los estilos ya son los modificados, restaurarlos a los originales
+          element.css(original);
+        } else {
+          // Si no, aplicar los nuevos estilos
+          element.css(modified);
+        }
+      }
+
+      // Cambiar estilos al presionar el primer título
+      $('#title1').click(function () {
+        toggleStyles($(this), originalStyles, newStyles1);
+      });
+
+      // Cambiar estilos al presionar el segundo título
+      $('#title2').click(function () {
+        toggleStyles($(this), originalStyles, newStyles2);
+      });
+    });
+  </script>
+</body>
+</html>

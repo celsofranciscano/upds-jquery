@@ -1,0 +1,81 @@
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Ocultar y Mostrar Listas con jQuery</title>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    /* Estilos adicionales */
+    .list-container {
+      margin-top: 20px;
+    }
+    .list-container ul {
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 p-6">
+  <h1 class="text-2xl font-bold mb-4 text-center">Ocultar y Mostrar Listas con jQuery</h1>
+
+  <!-- Botones para las listas -->
+  <div class="flex justify-center space-x-4 mb-6">
+    <button id="hideList1Btn" class="px-4 py-2 bg-blue-500 text-white rounded-md">Ocultar Lista 1</button>
+    <button id="showList1Btn" class="px-4 py-2 bg-green-500 text-white rounded-md">Mostrar Lista 1</button>
+  </div>
+  
+  <div class="flex justify-center space-x-4 mb-6">
+    <button id="hideList2Btn" class="px-4 py-2 bg-blue-500 text-white rounded-md">Ocultar Lista 2</button>
+    <button id="showList2Btn" class="px-4 py-2 bg-green-500 text-white rounded-md">Mostrar Lista 2</button>
+  </div>
+
+  <!-- Listas centradas -->
+  <div class="list-container flex justify-center space-x-6">
+    <!-- Primera lista -->
+    <ul id="list1" class="list-disc p-4 border rounded-lg">
+      <li>Elemento 1</li>
+      <li>Elemento 2</li>
+      <li>Elemento 3</li>
+      <li>Elemento 4</li>
+      <li>Elemento 5</li>
+    </ul>
+
+    <!-- Segunda lista -->
+    <ul id="list2" class="list-disc p-4 border rounded-lg">
+      <li>Elemento A</li>
+      <li>Elemento B</li>
+      <li>Elemento C</li>
+      <li>Elemento D</li>
+      <li>Elemento E</li>
+    </ul>
+  </div>
+
+  <!-- jQuery Script -->
+  <script>
+    $(document).ready(function () {
+      // Ocultar los elementos de la primera lista
+      $('#hideList1Btn').click(function () {
+        $('#list1').hide(); // Oculta toda la lista 1
+      });
+      
+      // Mostrar los elementos de la primera lista
+      $('#showList1Btn').click(function () {
+        $('#list1').show(); // Muestra toda la lista 1
+      });
+      
+      // Ocultar los elementos de la segunda lista
+      $('#hideList2Btn').click(function () {
+        $('#list2').hide(); // Oculta toda la lista 2
+      });
+      
+      // Mostrar los elementos de la segunda lista
+      $('#showList2Btn').click(function () {
+        $('#list2').show(); // Muestra toda la lista 2
+      });
+    });
+  </script>
+</body>
+</html>
