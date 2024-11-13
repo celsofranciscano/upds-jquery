@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Formulario Dinámico con jQuery</title>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body class="bg-gray-100 p-6">
+  <h1 class="text-2xl font-bold mb-4 text-center">Formulario Dinámico con jQuery</h1>
+  
+  <!-- Contenedor del Formulario -->
+  <div id="formContainer" class="mb-6"></div>
+
+  <!-- Botones -->
+  <div class="flex justify-center space-x-4">
+    <button id="createFormBtn" class="px-4 py-2 bg-blue-500 text-white rounded-md">Crear Formulario</button>
+    <button id="showElementsBtn" class="px-4 py-2 bg-green-500 text-white rounded-md">Mostrar Elementos</button>
+  </div>
+
+  <!-- jQuery Script -->
+  <script>
+    $(document).ready(function () {
+      // Almacena si el formulario ya ha sido creado
+      let formCreated = false;
+
+      // Botón para crear el formulario dinámicamente
+      $('#createFormBtn').click(function () {
+        if (!formCreated) { // Verifica que el formulario no exista ya
+          $('#formContainer').html(`
+            <form id="dynamicForm" class="space-y-4 bg-white p-6 rounded-md shadow-md">
+              <div>
+                <label for="username" class="block text-gray-700 font-bold">Nombre de Usuario:</label>
+                <input type="text" id="username" name="username" class="w-full mt-1 p-2 border rounded-md" required>
+              </div>
+              <div>
+                <label for="password" class="block text-gray-700 font-bold">Clave:</label>
+                <input type="password" id="password" name="password" class="w-full mt-1 p-2 border rounded-md" required>
+              </div>
+            </form>
+          `);
+          formCreated = true; // Marca el formulario como creado
+        }
+      });
+
+      // Botón para mostrar todos los elementos del formulario creado
+      $('#showElementsBtn').click(function () {
+        if (formCreated) {
+          const formElements = $('#dynamicForm').html();
+          alert('Elementos del Formulario:\n\n' + formElements);
+        } else {
+          alert('Primero debes crear el formulario.');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

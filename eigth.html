@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Controles de Texto con jQuery</title>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    /* Estilo de color inicial azul */
+    .text-control {
+      color: blue;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 p-6">
+  <h1 class="text-2xl font-bold mb-4 text-center">Controles de Texto con jQuery</h1>
+  
+  <!-- Controles de Texto -->
+  <div class="space-y-4 flex justify-center">
+    <input type="text" class="text-control p-2 border rounded-md" value="Texto 1">
+    <input type="text" class="text-control p-2 border rounded-md" value="Texto 2">
+  </div>
+
+  <!-- jQuery Script -->
+  <script>
+    $(document).ready(function () {
+      // Cambia el color a rojo cuando el campo de texto recibe foco
+      $('.text-control').focus(function () {
+        $(this).css('color', 'red');
+      });
+
+      // Vuelve a azul cuando el campo de texto pierde el foco
+      $('.text-control').blur(function () {
+        $(this).css('color', 'blue');
+      });
+    });
+  </script>
+</body>
+</html>
