@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Clase en Párrafos con jQuery</title>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    /* Estilos adicionales */
+    .highlight {
+      background-color: #ffeb3b;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 p-6">
+  <h1 class="text-2xl font-bold mb-4 text-center">Clase en Párrafos con jQuery</h1>
+  
+  <!-- Contenedor de Párrafos -->
+  <div id="paragraphContainer" class="space-y-4">
+    <p class="rounded-md shadow-md p-4 bg-white">Este es el párrafo 1.</p>
+    <p class="rounded-md shadow-md p-4 bg-white">Este es el párrafo 2.</p>
+    <p class="rounded-md shadow-md p-4 bg-white">Este es el párrafo 3.</p>
+    <p class="rounded-md shadow-md p-4 bg-white">Este es el párrafo 4.</p>
+  </div>
+
+  <!-- Botones para Asignar y Quitar Clase -->
+  <div class="mt-6 flex justify-center space-x-4">
+    <button id="addClassBtn" class="px-4 py-2 bg-blue-500 text-white rounded-md">Agregar Clase</button>
+    <button id="removeClassBtn" class="px-4 py-2 bg-red-500 text-white rounded-md">Quitar Clase</button>
+  </div>
+
+  <!-- jQuery Script -->
+  <script>
+    $(document).ready(function () {
+      // Asocia la clase "highlight" a todos los párrafos
+      $('#addClassBtn').click(function () {
+        $('#paragraphContainer p').addClass('highlight');
+      });
+
+      // Desasocia la clase "highlight" de todos los párrafos
+      $('#removeClassBtn').click(function () {
+        $('#paragraphContainer p').removeClass('highlight');
+      });
+    });
+  </script>
+</body>
+</html>
