@@ -7,7 +7,19 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
-<body class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+<body class="bg-gray-100 px-4 md:px-16 py-4">
+
+    <details class="py-4">
+        <summary>
+            Galería de Efectos con jQuery
+            
+        </summary>
+        Ejercicio 4.-Implementar una página que contenga tres hipervínculos, cuando ingrese la flecha del mouse al hipervínculo cambiar el color de fondo, retornando el color original cuando retiramos la flecha del elemento.
+    </details>
+  
+ <section class=" shadow-lg rounded-md p-8">
+
+
 
   <h2 class="text-2xl font-semibold text-gray-800 mb-6">Hipervínculos Interactivos</h2>
 
@@ -16,6 +28,7 @@
   <a href="#link2" class="link mb-4 px-4 py-2 text-gray-800 bg-gray-200 rounded-lg transition duration-300">ALBATROS HEAVY SUIT</a>
   <a href="#link3" class="link mb-4 px-4 py-2 text-gray-800 bg-gray-200 rounded-lg transition duration-300">CABAL ENFORCER</a>
 
+ </section>
   <script>
     $(document).ready(function() {
       // Cambiar color de fondo al pasar el mouse
@@ -39,6 +52,7 @@
         }, 200);
       });
     });
+    
   </script>
 
 </body>
