@@ -7,7 +7,17 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
-<body class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+<body class="bg-gray-100 px-4 md:px-16 py-4">
+
+    <details class="py-4">
+        <summary>
+            Galería de Efectos con jQuery
+            
+        </summary>
+        Ejercicio 6.- aplicar un estilo resaltado para aquellos lenguajes que son orientados a objetos. Cuando se presione un botón agregar la propiedad background-color a todos los elementos de dicha clase.
+    </details>
+  
+ <section class=" shadow-lg rounded-md p-8">
 
   <h2 class="text-2xl font-semibold text-gray-800 mb-6">Lenguajes de Programación</h2>
 
@@ -20,12 +30,14 @@
     <li class="py-2">JavaScript</li>
   </ul>
 
-  <button id="highlightBtn" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Resaltar Lenguajes Orientados a Objetos</button>
-
+  <button id="highlightBtn" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors" aria-label="Resaltar lenguajes orientados a objetos">
+    Resaltar Lenguajes Orientados a Objetos
+  </button>
+ </section>
   <script>
     $(document).ready(function() {
       $('#highlightBtn').on('click', function() {
-        $('.oop').css('background-color', '#D1FAE5');
+        $('.oop').addClass('bg-green-100'); // Añade una clase en lugar de inline styles
       });
     });
   </script>

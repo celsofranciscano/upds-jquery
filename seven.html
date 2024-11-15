@@ -4,20 +4,33 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <title>Clase en Párrafos con jQuery</title>
+  <title>Clase Dinámica en Párrafos con jQuery</title>
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <style>
-    /* Estilos adicionales */
+    /* Estilos de la clase de resaltado */
     .highlight {
-      background-color: #ffeb3b;
+      background-color: #34d399; /* Verde claro */
       font-weight: bold;
-      color: #333;
+      color: white;
+      padding: 4px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
     }
   </style>
 </head>
-<body class="bg-gray-100 p-6">
-  <h1 class="text-2xl font-bold mb-4 text-center">Clase en Párrafos con jQuery</h1>
+<body class="bg-gray-100 px-4 md:px-16 py-4">
+
+    <details class="py-4">
+        <summary>
+            Galería de Efectos con jQuery
+            
+        </summary>
+        Ejercicio 7.- Disponer un div con un conjunto de párrafos. Cuando se presione un botón asociarle una clase y cuando se presione otro desasociarlo de dicha clase.
+    </details>
+  
+ <section class=" shadow-lg rounded-md p-8">
+  <h1 class="text-2xl font-bold mb-4 text-center">Clase Dinámica en Párrafos con jQuery</h1>
   
   <!-- Contenedor de Párrafos -->
   <div id="paragraphContainer" class="space-y-4">
@@ -27,23 +40,30 @@
     <p class="rounded-md shadow-md p-4 bg-white">Este es el párrafo 4.</p>
   </div>
 
-  <!-- Botones para Asignar y Quitar Clase -->
+  <!-- Botones para Asignar, Quitar y Alternar Clase -->
   <div class="mt-6 flex justify-center space-x-4">
-    <button id="addClassBtn" class="px-4 py-2 bg-blue-500 text-white rounded-md">Agregar Clase</button>
-    <button id="removeClassBtn" class="px-4 py-2 bg-red-500 text-white rounded-md">Quitar Clase</button>
+    <button id="addClassBtn" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">Agregar Clase</button>
+    <button id="removeClassBtn" class="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600">Quitar Clase</button>
+    <button id="toggleClassBtn" class="px-4 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-600">Alternar Clase</button>
   </div>
+ </section>
 
   <!-- jQuery Script -->
   <script>
     $(document).ready(function () {
-      // Asocia la clase "highlight" a todos los párrafos
+      // Botón para agregar la clase "highlight" a todos los párrafos
       $('#addClassBtn').click(function () {
         $('#paragraphContainer p').addClass('highlight');
       });
 
-      // Desasocia la clase "highlight" de todos los párrafos
+      // Botón para quitar la clase "highlight" de todos los párrafos
       $('#removeClassBtn').click(function () {
         $('#paragraphContainer p').removeClass('highlight');
+      });
+
+      // Botón para alternar la clase "highlight" en todos los párrafos
+      $('#toggleClassBtn').click(function () {
+        $('#paragraphContainer p').toggleClass('highlight');
       });
     });
   </script>

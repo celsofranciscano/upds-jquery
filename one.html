@@ -16,8 +16,19 @@
     }
   </style>
 </head>
-<body class="bg-gray-100 p-6">
-  <h1 class="text-2xl font-bold mb-4 text-center">Galería de Efectos con jQuery</h1>
+<body class="bg-gray-100 px-4 md:px-16 py-4">
+    <details class="py-4">
+        <summary>
+            Galería de Efectos con jQuery
+            
+        </summary>
+        Ejercicio 1.-Relizar una galería de efectos que tiene jquery
+    </details>
+  
+ <section class=" shadow-lg rounded-md p-8">
+
+
+     
   
   <!-- Galería -->
   <div class="gallery grid grid-cols-3 gap-4">
@@ -27,24 +38,25 @@
     <img src="https://via.placeholder.com/150" alt="Imagen 4" class="rounded-md shadow-md">
     <img src="https://via.placeholder.com/150" alt="Imagen 5" class="rounded-md shadow-md">
     <img src="https://via.placeholder.com/150" alt="Imagen 6" class="rounded-md shadow-md">
-  </div>
+</div>
 
-  <!-- Botones para Efectos -->
+<!-- Botones para Efectos -->
   <div class="mt-6 flex justify-center space-x-4">
-    <button id="fadeToggleBtn" class="px-4 py-2 bg-blue-500 text-white rounded-md">Fade Toggle</button>
-    <button id="slideToggleBtn" class="px-4 py-2 bg-green-500 text-white rounded-md">Slide Toggle</button>
-    <button id="animateBtn" class="px-4 py-2 bg-purple-500 text-white rounded-md">Animar</button>
+      <button id="fadeToggleBtn" class="px-4 py-2 bg-blue-500 text-white rounded-md">Fade Toggle</button>
+      <button id="slideToggleBtn" class="px-4 py-2 bg-green-500 text-white rounded-md">Slide Toggle</button>
+      <button id="animateBtn" class="px-4 py-2 bg-purple-500 text-white rounded-md">Animar</button>
   </div>
 
+</section>
   <!-- jQuery Script -->
   <script>
-    $(document).ready(function () {
-      // Efecto de Fade Toggle
-      $('#fadeToggleBtn').click(function () {
-        $('.gallery img').fadeToggle();
-      });
-
-      // Efecto de Slide Toggle
+      $(document).ready(function () {
+          // Efecto de Fade Toggle
+          $('#fadeToggleBtn').click(function () {
+              $('.gallery img').fadeToggle();
+            });
+            
+            // Efecto de Slide Toggle
       $('#slideToggleBtn').click(function () {
         $('.gallery img').slideToggle();
       });
@@ -56,6 +68,7 @@
         });
       });
     });
+    
   </script>
 </body>
 </html>

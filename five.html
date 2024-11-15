@@ -7,7 +7,17 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
-<body class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+<body class="bg-gray-100 px-4 md:px-16 py-4">
+
+    <details class="py-4">
+        <summary>
+            Galería de Efectos con jQuery
+            
+        </summary>
+        Ejercicio 5.- Implementar una página que contenga una lista con cuatro items. Probar distintos métodos para manipular la lista.
+    </details>
+  
+ <section class=" shadow-lg rounded-md p-8">
 
   <h2 class="text-2xl font-semibold text-gray-800 mb-6">Lista Interactiva</h2>
 
@@ -24,6 +34,7 @@
     <button id="changeItem" class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">Cambiar Item 2</button>
     <button id="toggleList" class="px-4 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600">Mostrar/Ocultar Lista</button>
   </div>
+ </section>
 
   <script>
     $(document).ready(function() {
